@@ -1,11 +1,22 @@
+function process(visualcrossingobj) {
+  let { currentConditions: { visibility, conditions, humidity, sunrise, sunset, temp } } = visualcrossingobj 
+  return ({ visibility, 
+        conditions, 
+        humidity, 
+        sunrise, 
+        sunset, 
+        temp   }) 
+
+}
 export function getWeather(param="london") {
-   fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London/today?unitGroup=metric&key=UVW6SQDY49YCTPXV9BBWS6PBJ`)
+  return fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${param}/today?unitGroup=metric&key=UVW6SQDY49YCTPXV9BBWS6PBJ`)
     .then(function(response) {
       return response.json();
     })
-    .then(function(response) {
-      console.log(response) 
-    });
+    .then(function(result) {
+      return process(result)
+    })
 }
-getWeather()
+
+// getWeather().then(res => console.log(res))
 
