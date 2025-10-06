@@ -6,15 +6,68 @@
     <title>Weather</title>
 </head>
 <body>
-        <form action="">
+        <header>
             <div>
-                <input type="text" name="location" placeholder="enter location">
+                <h1 class="title">Odin<span class="meteo">meteo</span></h1>
             </div>
+        </header>
 
+        <nav class="nav">
+            <form action="" class="search">
+                <div>
+                    <input type="text" name="location" placeholder="enter location">
+                </div>
+
+                <div>
+                     <button id="submit" class="btn-search">Search</button>
+                </div>
+
+            </form>    
+        </nav>
+
+        <main>
             <div>
-                 <button id="submit">Search</button>
+                <h2>Weather in 
+                    <span id="currentCity">London</span>
+                    now
+                </h2>
             </div>
+             <div class="b-weather">
+                <div class="now">
+                    <div class="content">
+                        <div class="date">Now</div>
+                        <div class="day">17:30</div>
+                        <div class="temp-data">
+                           <p class="temp"><span id="temp">13</span>&nbsp<span id="degrees">°C</span></p>
+                           <p class="feels-like-temp">Feels like&nbsp
+                            <span id="feels-like-temp">13</span>&nbsp
+                            <span id="degrees">°C</span>
+                           </p>
+                        </div>
+                    </div>
+                    <div class="ico">
+                        Icon
+                    </div>
+                </div>
+                <div class="next">
+                    <div class="tommorow">
+                        data
+                    </div>
+                    <div class="after-tommorow">
+                        data
+                    </div>
+                </div>
+                <div class="bottom">
+                    
+                </div>
+             </div>
+        
+        </main>
 
-        </form>
+        <footer>
+            
+        </footer>
+
+      
 </body>
 </html>
