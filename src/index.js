@@ -35,6 +35,8 @@ function setConversion(degree, ...elements) {
 	for (let element of elements) {
 		element.forEach(node => node.textContent = convertTemp(node.textContent, degree))
 	}
+	let degrees = document.querySelectorAll("#degrees")
+	degrees.forEach(deg => deg.textContent = `°${degree === "C" ? "F" : "C"}`)
 }
 function fillCurrentCity(city="London") {
 	currentCity.textContent = city[0].toUpperCase() + city.slice(1, city.length)
