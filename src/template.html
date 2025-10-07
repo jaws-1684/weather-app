@@ -6,6 +6,9 @@
     <title>Weather</title>
 </head>
 <body>
+        <div class="banner">
+            <img src="https://static.vecteezy.com/system/resources/previews/009/880/445/large_2x/blue-sky-with-altostratus-clouds-background-cartoon-sky-with-cirrus-clouds-concept-all-seasonal-horizon-banner-in-sunny-day-spring-and-summer-in-the-morning-illustration-horizon-vector.jpg" alt="weather banner">
+        </div>
         <header>
             <div>
                 <h1 class="title">Odin<span class="meteo">meteo</span></h1>
@@ -22,50 +25,71 @@
                      <button id="submit" class="btn-search">Search</button>
                 </div>
 
-            </form>    
+            </form>
+
+            <label class="switch">
+                <input id="degreesSwitch" type="checkbox">
+                <span class="slider round"></span>
+            </label>    
         </nav>
 
         <main>
             <div>
                 <h2>Weather in 
-                    <span id="currentCity">London</span>
+                    <span id="currentCity">Serching</span>
                     now
                 </h2>
             </div>
              <div class="b-weather">
                 <div class="now">
-                    <div class="content">
-                        <div class="date">Now</div>
-                        <div class="day">17:30</div>
-                        <div class="temp-data">
-                           <p class="temp"><span id="temp">13</span>&nbsp<span id="degrees">°C</span></p>
-                           <p class="feels-like-temp">Feels like&nbsp
-                            <span id="feels-like-temp">13</span>&nbsp
-                            <span id="degrees">°C</span>
-                           </p>
-                        </div>
-                    </div>
-                    <div class="ico">
-                        Icon
-                    </div>
                 </div>
                 <div class="next">
                     <div class="tommorow">
-                        data
                     </div>
                     <div class="after-tommorow">
-                        data
                     </div>
                 </div>
                 <div class="bottom">
-                    
+                    <div class="n-date-time">Loading</div>
+                    <div class="container temperature">
+                    </div>
+                    <div class="n-feels-like">
+                        <p>Feels like&nbsp
+                            <span id="feels-like-temp">Loading</span>&nbsp
+                            <span id="degrees">°C</span>
+                           </p>
+                    </div>
+                    <div class="conditions">Loading</div>
+                    <div class="container aditional-data">
+                        <div>
+                            <p>Wind speed</p>
+                            <p class="wind">Loading</p>
+                        </div>
+                        <div>
+                            <p>Pressure</p>
+                            <p class="pressure">Loading</p>
+                        </div>
+                        <div>
+                            <p>Humidity</p>
+                            <p class="humidity">Loading</p>
+                        </div>
+                        <div>
+                            <p>Visibility</p>
+                            <p class="visibility">Loading</p>
+                        </div>
+                    </div>
                 </div>
              </div>
         
         </main>
 
         <footer>
+             <div class="contacts">
+                  <p>Author:&nbsp<span class="author">jaws-1684</span></p>
+                  <p>Github: <a href="https://github.com/jaws-1684">github.com</a></p>
+             </div>   
             
+             <p>© Odimeteo 2025</p>
         </footer>
 
       

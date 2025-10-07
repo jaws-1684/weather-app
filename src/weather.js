@@ -1,22 +1,33 @@
 function process(visualcrossingobj) {
-  let { currentConditions: { visibility, conditions, humidity, sunrise, sunset, temp } } = visualcrossingobj 
+  let { visibility, conditions, humidity, sunrise, sunset, temp, datetime, feelslike, pressure, windspeed, icon } = visualcrossingobj 
   return ({ visibility, 
         conditions, 
         humidity, 
         sunrise, 
         sunset, 
-        temp   }) 
+        temp,
+        datetime,
+        feelslike,
+        sunrise,
+        pressure,
+        windspeed,
+        icon   
+      }) 
 
 }
 export function getWeather(param="london") {
-  return fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${param}/today?unitGroup=metric&key=UVW6SQDY49YCTPXV9BBWS6PBJ`)
+  return fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${param}/next3days?unitGroup=metric&key=UVW6SQDY49YCTPXV9BBWS6PBJ`)
     .then(function(response) {
       return response.json();
     })
     .then(function(result) {
-      return process(result)
+      let daysArr = result.days
+      let res = []
+      daysArr.forEach(day => {
+        res.push(process(day))
+      })
+      return res
     })
 }
 
-// getWeather().then(res => console.log(res))
 
