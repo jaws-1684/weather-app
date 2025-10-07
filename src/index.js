@@ -25,7 +25,7 @@ const humidity =  weatherBlock.querySelector(".humidity")
 const degreesSwitch = document.querySelector("#degreesSwitch")
 
 function setIcon(e, icon) {
-	e.querySelector(".ico").src = require(`./WeatherIcons/SVG/monochrome/${icon}.svg`)
+	e.querySelector(".ico").src = require(`./icons/SVG/monochrome/${icon}.svg`)
 }
 
 function setData(e, ...data) {
