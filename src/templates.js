@@ -1,5 +1,6 @@
 export const Templates = (() => {
-	const temperature = (day, time, realTemp, feelTemp) => {
+	const temperature = (ico, day, time, realTemp, feelTemp) => {
+      let icon = require(`./icons/SVG/monochrome/${ico}.svg`)
 		return `
 			<div class="content">
                         <div class="date">${day}</div>
@@ -12,7 +13,7 @@ export const Templates = (() => {
                            </p>
                         </div>
                     </div>
-                    <img class="ico" src=''>
+                    <img class="ico" src='${icon}'>
 		`
 	}
 

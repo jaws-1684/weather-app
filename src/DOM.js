@@ -1,21 +1,21 @@
 import { Templates } from "./templates.js";
+import { getGif } from "./background.js";
+import { convertTemp } from "./helpers.js"
 
 export const DOM = ((doc) => {
-	const nowWidget = doc.querySelector(".b-weather")
+	const widgets = doc.querySelector(".b-weather")
 	
-	function renderIcon(e, icon) {
-		e.querySelector(".ico").src = require(`./icons/SVG/monochrome/${icon}.svg`)
+	function renderWidget(attr, ...data) {
+		const cast = widgets.querySelector(attr)
+		cast.innerHTML = Templates.temperature(...data)
 	}
 
-	function renderWidgets(e, ...data) {
-		e.innerHTML = Templates.temperature(...data)
-	}
 	function renderInfo(windspeed, visibility, humidity, pressure) {
 		// weather addtional information
-		const w = nowWidget.querySelector(".wind")
-		const v = nowWidget.querySelector(".visibility")
-		const p =  nowWidget.querySelector(".pressure")
-		const h =  nowWidget.querySelector(".humidity")
+		const w = widgets.querySelector(".wind")
+		const v = widgets.querySelector(".visibility")
+		const p =  widgets.querySelector(".pressure")
+		const h =  widgets.querySelector(".humidity")
 
 		w.textContent = windspeed + " " + "km/h"
 		v.textContent = visibility + " " + "km/3"
@@ -24,22 +24,54 @@ export const DOM = ((doc) => {
 	}
 
 	function renderNowDatetime(dayName, hourMinute, month) {
-		const nowDatetime = nowWidget.querySelector(".n-date-time")
+		const nowDatetime = widgets.querySelector(".n-date-time")
 		nowDatetime.textContent = `${dayName}, ${hourMinute} ${month}`
 	}
 	function renderNowTemperature(sunset, sunrise, temp) {
-		const nowTemp =  nowWidget.querySelector(".container.temperature")
+		const nowTemp =  widgets.querySelector(".container.temperature")
 		nowTemp.innerHTML = Templates.nowTemperature(sunset, sunrise, temp)
 	}
 	function renderNowFeelsLike(feelsLikeTemp) {
-		const nowFeelsLike = nowWidget.querySelector("#feels-like-temp")
+		const nowFeelsLike = widgets.querySelector("#feels-like-temp")
 		nowFeelsLike.textContent = feelsLikeTemp
 
 	}
 	function renderNowConditions(conditions) {	
-		const nowConditions = nowWidget.querySelector(".conditions")
+		const nowConditions = widgets.querySelector(".conditions")
 		nowConditions.textContent = conditions
 	}
-	
-	return { renderInfo, renderNowDatetime, renderNowTemperature, renderNowFeelsLike, renderNowConditions }
+	function renderBackground(conditions) {
+		const bottom = widgets.querySelector(".bottom")
+		getGif(conditions).then(img => {
+			bottom.style.cssText = `background: url(${img}); background-size: cover;`
+		})
+	}
+	function renderLocation(location) {
+		let loc = doc.querySelector("#currentCity")
+		loc.textContent = location
+	}
+
+
+
+	function renderConversion(degree) {
+	 	const temp = document.querySelectorAll("#temp")
+		const feelsLikeTemp = document.querySelectorAll("#feels-like-temp")
+			
+		for (let element of [temp, feelsLikeTemp]) {
+			element.forEach(node => node.textContent = convertTemp(node.textContent, degree))
+		}
+		let degrees = document.querySelectorAll("#degrees")
+		degrees.forEach(deg => deg.textContent = `°${degree === "C" ? "F" : "C"}`)
+	}
+	return { 
+		renderInfo, 
+		renderNowDatetime, 
+		renderNowTemperature, 
+		renderNowFeelsLike, 
+		renderNowConditions,
+		renderWidget,
+		renderBackground,
+		renderLocation,
+		renderConversion
+		 }
 })(document)
