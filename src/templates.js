@@ -1,4 +1,4 @@
-export const Template = (() => {
+export const Templates = (() => {
 	const temperature = (day, time, realTemp, feelTemp) => {
 		return `
 			<div class="content">
@@ -16,7 +16,7 @@ export const Template = (() => {
 		`
 	}
 
-	const blockTemp = (sunset, sunrise, realTemp) => {
+	const nowTemperature = (sunset, sunrise, realTemp) => {
 		return ` <div class="sunrise">
                                 <p>Sunrise</p>
                                 <p>${sunrise}</p>
@@ -29,9 +29,5 @@ export const Template = (() => {
                                <p>${sunset}</p>
                             </div>`
 	}
-	const blockConditions = () => {
-
-	}
-
-	return { temperature, blockTemp }
+	return { temperature, nowTemperature }
 })()

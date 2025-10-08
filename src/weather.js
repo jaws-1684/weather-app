@@ -1,4 +1,4 @@
-class Weather {
+export class Weather {
   static process(visualcrossingobj) {
     let { visibility, conditions, humidity, sunrise, sunset, temp, datetime, feelslike, pressure, windspeed, icon } = visualcrossingobj 
     return ({ visibility, 
@@ -25,7 +25,7 @@ class Weather {
         let daysArr = result.days
         let res = []
         daysArr.forEach(day => {
-          res.push(process(day))
+          res.push(Weather.process(day))
         })
         return res
       })
