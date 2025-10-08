@@ -6,8 +6,8 @@ import favicon from "./icons/favicon.png"
 
 let link = document.querySelector("#favicon")
 link.href = favicon
-// Weather.getWeather().then(res => {
-// 	App.main(res)
-// })
+Weather.getWeather().then(res => {
+	App.main(res)
+})
 
-// App.listen()
+App.listen()
