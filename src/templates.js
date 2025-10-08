@@ -1,7 +1,7 @@
 export const Templates = (() => {
-	const temperature = (ico, day, time, realTemp, feelTemp) => {
-      let icon = require(`./icons/SVG/monochrome/${ico}.svg`)
-		return `
+  const temperature = (ico, day, time, realTemp, feelTemp) => {
+    let icon = require(`./icons/SVG/monochrome/${ico}.svg`);
+    return `
 			<div class="content">
                         <div class="date">${day}</div>
                         <div class="day">${time}</div>
@@ -14,11 +14,11 @@ export const Templates = (() => {
                         </div>
                     </div>
                     <img class="ico" src='${icon}'>
-		`
-	}
+		`;
+  };
 
-	const nowTemperature = (sunset, sunrise, realTemp) => {
-		return ` <div class="sunrise">
+  const nowTemperature = (sunset, sunrise, realTemp) => {
+    return ` <div class="sunrise">
                                 <p>Sunrise</p>
                                 <p>${sunrise}</p>
                             </div>
@@ -28,7 +28,7 @@ export const Templates = (() => {
                             <div class="sunset">
                                <p>Sunset</p>
                                <p>${sunset}</p>
-                            </div>`
-	}
-	return { temperature, nowTemperature }
-})()
+                            </div>`;
+  };
+  return { temperature, nowTemperature };
+})();

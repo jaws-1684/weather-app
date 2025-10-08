@@ -3,7 +3,9 @@
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -22,30 +24,48 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
-
 
 :root {
   --bg-header: #ffffff;
@@ -61,7 +81,7 @@ h1, h2, h3, h4, h5, h6 {
 
   --border-size: 1px;
   --border-style: solid;
-  --border-color: #D8D8D8;
+  --border-color: #d8d8d8;
   --base-border: 1px solid var(--border-color);
   --base-radius: 5px;
 
@@ -87,7 +107,7 @@ body {
   flex-direction: column;
 }
 body > * {
-   padding: var(--page-padding);
+  padding: var(--page-padding);
 }
 
 main {
@@ -96,11 +116,11 @@ main {
   width: 100%;
   min-height: fit-content;
 }
-header, footer {
+header,
+footer {
   min-height: var(--base-h);
   background: var(--bg-header);
   border: var(--base-border);
- 
 }
 
 header {
@@ -128,7 +148,8 @@ header > div {
   align-items: center;
 }
 
-.nav input[name="location"], .btn-search {
+.nav input[name="location"],
+.btn-search {
   border-radius: var(--base-radius);
   border: none;
 }
@@ -167,7 +188,8 @@ main > div {
   display: flex;
   padding: var(--base-padding);
 }
-.now, .next {
+.now,
+.next {
   grid-row: 1;
 }
 .next {
@@ -179,7 +201,8 @@ main > div {
   width: 100%;
   grid-column: 2;
 }
-.tommorow, .after-tommorow {
+.tommorow,
+.after-tommorow {
   background-color: var(--color-main);
   border-radius: var(--base-radius);
   height: 100%;
@@ -269,7 +292,6 @@ main > div {
   background-color: #ffffff1a;
   padding: var(--base-padding);
   padding: 0 10px 0 10px;
-
 }
 
 .banner {
@@ -327,8 +349,8 @@ main > div {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
@@ -339,8 +361,8 @@ main > div {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .slider {
@@ -348,7 +370,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
@@ -399,4 +421,3 @@ footer {
     --page-padding: 0 5vw 0 4vw;
   }
 }
-
