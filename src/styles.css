@@ -95,27 +95,28 @@ h6 {
   --font-size-md: 18px;
   --font-size-heading: 40px;
 
-  --page-padding: 0 20vw 0 20vw;
+  --page-padding: 0 0 0 0;
   --base-padding: 5px;
   --base-margin: 10px;
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   width: var(--full-width);
   display: flex;
   flex-direction: column;
 }
-body > * {
-  padding: var(--page-padding);
-}
 
 main {
-  flex-grow: 1;
   background: var(--bg-main);
   width: 100%;
   min-height: fit-content;
+  padding: 0 20vw 0 20vw;
 }
+.top {
+  padding: 0 20px;
+}
+
 header,
 footer {
   min-height: var(--base-h);
@@ -215,6 +216,7 @@ main > div {
   grid-row: 2;
   background-color: var(--color-main);
   border-radius: var(--base-radius);
+   background: blue;
 }
 
 .content {
@@ -285,7 +287,7 @@ main > div {
   margin-bottom: var(--base-margin);
 }
 .n-temp {
-  font-size: 120px;
+  font-size: clamp(min(2vw, 50px), 120px, max(30vw, 150px));
   font-weight: bold;
 }
 .n-feels-like {
@@ -409,15 +411,36 @@ footer {
   .b-weather {
     width: 100%;
   }
+  .n-temp {
+    font-size: 50px;
+  }
+  .top, main {
+    padding: 0 5vw;
+  }
   :root {
     --page-padding: 0 5vw 0 4vw;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 1200px) {
   .b-weather {
-    width: 60%;
+    width: 100%;
   }
   :root {
-    --page-padding: 0 5vw 0 4vw;
+    --page-padding: 0 5vw 0 5vw;
   }
+}
+
+.page {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main {
+  flex-grow: 1;
+ 
+}
+.page > footer {
+  flex-grow: 0;
 }

@@ -32,7 +32,7 @@ export const DOM = ((doc) => {
     nowTemp.innerHTML = Templates.nowTemperature(sunset, sunrise, temp);
   }
   function renderNowFeelsLike(feelsLikeTemp) {
-    const nowFeelsLike = widgets.querySelector("#feels-like-temp");
+    const nowFeelsLike = widgets.querySelector(".target");
     nowFeelsLike.textContent = feelsLikeTemp;
   }
   function renderNowConditions(conditions) {

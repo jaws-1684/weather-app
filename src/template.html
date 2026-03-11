@@ -13,13 +13,14 @@
         alt="weather banner"
       />
     </div>
-    <header>
+   
+      <header class="top">
       <div>
         <h1 class="title">Odin<span class="meteo">meteo</span></h1>
       </div>
     </header>
 
-    <nav class="nav">
+    <nav class="nav top">
       <form action="" class="search">
         <div>
           <input type="text" name="location" placeholder="enter location" />
@@ -35,8 +36,10 @@
         <span class="slider round"></span>
       </label>
     </nav>
+    
 
-    <main>
+    <div class="page">
+       <main>
       <div>
         <h2>
           Weather in
@@ -55,7 +58,7 @@
           <div class="container temperature"></div>
           <div class="n-feels-like">
             <p>
-              Feels like&nbsp <span id="feels-like-temp">Loading</span>&nbsp
+              Feels like&nbsp <span id="feels-like-temp" class="target">Loading</span>&nbsp
               <span id="degrees">°C</span>
             </p>
           </div>
@@ -81,8 +84,8 @@
         </div>
       </div>
     </main>
-
-    <footer>
+    
+  <footer>
       <div class="contacts">
         <p>Author:&nbsp<span class="author">jaws-1684</span></p>
         <p>Github: <a href="https://github.com/jaws-1684">github.com</a></p>
@@ -90,5 +93,7 @@
 
       <p>© Odimeteo 2025</p>
     </footer>
+    </div>
+  
   </body>
 </html>

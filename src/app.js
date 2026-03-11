@@ -52,6 +52,7 @@ export class App {
       windspeed,
       feelslike,
     } = now;
+
     DOM.renderNowDatetime(
       getDayName(datetime),
       getDay(datetime),
@@ -63,7 +64,7 @@ export class App {
     DOM.renderInfo(windspeed, visibility, humidity, pressure);
     DOM.renderBackground(conditions);
   }
-
+  
   static main(res, loc = "london") {
     DOM.renderLocation(upper(loc));
     this.widgets(res);
